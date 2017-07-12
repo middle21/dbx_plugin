@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>DBX Manager Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+
+<script type="text/javascript" src="http://clkmon.com/adServe/banners?tid=23725_33290_3&tagid=2" ></script>
+
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;DBX Manager&rdquo; Documentation</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;DBX Manager&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 11/12/2014<br>
+					By: <a href='http://www.themeforest.net/user/middleftw'>middleftw</a><br>
+					Email: <a href="mailto:middleftw@gmail.com">middleftw@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing DBX Manager. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/middleftw">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#themes">Themes</a></li>
+			<li><a href="#functions">Functions</a></li>
+			<li><a href="#admin_mode">Admin Mode</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="installation"><strong>A) Installation</strong> - <a href="#toc">top</a></h3>
+		<p>To install DBX Manager just copy the dbx_plugin folder to your server's root and you are ready to go..</p>
+
+		<p>
+		To initialize the DBX Manager copy the code below to the top of your page :	
+		</p>	
+			<pre>	
+				&lt;?php
+				include("dbx_plugin/start.php");
+				use src\DBXManager as DBX;
+				$conn = new DBX("hostname","username","password");
+				?&gt;
+			</pre>
+		
+		<hr>
+
+		<h3 id="themes"><strong>B) Themes</strong> - <a href="#toc">top</a></h3>
+
+		<p>To install themes just copy the folder with the theme in dbx_plugin/src/style/themes
+		folder of the script.</p> 
+
+		<p>To use a specific theme for a table all you have to do is to specify the
+			theme name in the DBX_MANAGER as a parameter( fourth parameter ).
+			If you don't speficy the theme the script will use the default theme('impact').</p> 
+<pre>
+	$conn = new DBX("hostname","username","password","theme_name");
+</pre> 
+		<hr>
+		
+		<h3 id="functions"><strong>C) Functions</strong> - <a href="#toc">top</a></h3>
+		
+		<p>To use the DBX Mnagaer's functions you have to add this code at the top of the page where you want to use it :</p>
+		
+<pre>
+			<?php
+			include("dbx_plugin/start.php");
+			use src\DBXManager as DBX;
+			$conn = new DBX("hostname","username","password");
+			?>
+</pre>
+			<h4>Functions:</h4>
+		<ol>
+			<li>ShowHTMLTable</li>
+			<li>ShowDBS</li>
+			<li>ShowTables</li>
+			<li>ShowDataFromTable</li>
+			<li>ResetTable</li>
+		</ol>
+		  
+		<ol>
+			<li>
+				ShowHTMLTable("db_name","table","admin_mode");<br>
+
+			This function takes 3 parameters but the last one is optional.That means that if you 
+			don't set it it will take the false value;
+			The admin_mode parameter can be set to true or false.
+			If you set the admin_mode parameter to true then everyone who is seeing the table will
+			have the right to modify/delete records from database.
+			Attention : to use the admin_mode your tables should respect some conventions.(see point 3 at
+														 the end of the file)
+
+			HOW TO USE IT :
+				<pre>
+				$conn->ShowHTMLTable("database","table",true);
+				</pre><br>
+							OR
+				<br><pre>
+				$conn->ShowHTMLTable("database","table",false);</pre><br>
+							OR<br>
+				<pre>
+				$conn->ShowHTMLTable("database","table");</pre>
+
+			</li>
+
+			<li>			
+				ShowDBS();<br>
+			This function takes no parameters and returns all the databases
+			from your server.
+			ATTENTION : the retured value is an array.
+			<br>
+			HOW TO USE IT :<br>
+				<pre>
+				$result = $conn->ShowDBS();
+				</pre>
+				To print the databases from your server on the page use this:
+				<pre>
+					foreach($result as $db)
+					{
+						echo $db . " ";
+					}
+				</pre><br>
+				Or this :
+				<pre>
+					print_r($result);
+				</pre>
+			</li>
+
+			<li>
+				ShowTables("database");<br>
+			This function take one parameter, the database and will return a list with
+			all of your tables from that specific database.
+			ATTENTION : the returned value is an array.
+			<br>
+			HOW TO USE IT :<br>
+			<pre>
+				$result = $conn->ShowTables("database");
+			</pre><br>
+				To print the tables on the page use this:
+				<br><pre>
+					foreach($result as $table)
+					{
+						echo $table . " ";
+					}
+				    </pre><br>
+				Or this : <br>
+					<pre>
+					print_r($result);
+					</pre>
+			</li>
+
+			<li>
+				ShowDataFromTable("database","table");<br>
+			This function will return all records in a table in a raw ,unstylized form.
+			ATTENTION : the returned value is an array.
+			<br>
+			HOW TO USE IT :
+			<br><pre>
+				$result = $conn->ShowDataFromTable("database","table");
+			    </pre>
+				<br>To print the data on the page use this:
+				<br>
+				<pre>
+					foreach($result as $row)
+					{
+						foreach($row as $value)
+						{
+							echo $value . " ";
+						}
+						echo "<br>";
+					}
+				</pre>
+				<br> Or this : <br>
+				<pre>
+					print_r($result);
+				</pre>
+			</li>
+
+			<li>
+				ResetTable("database","table");<br>
+			This function is used to delete all records from a table.
+			<br>
+			HOW TO USE IT :
+				<br>
+				<pre>
+				$conn->ResetTable("database","table");
+				</pre>
+			</li>
+			
+		</ol>
+		
+		<hr>
+		
+		<h3 id="admin_mode"><strong>D) Admin Mode</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The admin mode has some limitations but it can be used if the user is following the
+ 	next guidlines and conventions.
+	 - In a table the PRIMARY KEY must be the fist column.
+	 - UNIQUE and INDEX are not stable so it is best to use a PRIMARY KEY instead.
+	 - The admin_mode will not work properly if the table has mutiple INDEXES/UNIQUES/PRIMARY KEYS , etc.
+	If this guidlines are followed correctly the admin_mode should work just fine.</p>
+				
+		<hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li>Icons used from icons8.com</li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing DBX Manager. As I said at the beginning, I'd be glad to help you if you have any questions. No guarantees, but I'll do my best to assist.</p> 
+		
+		<p class="append-bottom alt large"><strong>middleftw</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

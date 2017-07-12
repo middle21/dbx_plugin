@@ -1,0 +1,284 @@
+.dbx_select {
+	height:	25px;
+	width:	75px;
+	border:	1px solid black;
+}
+
+table { 
+  	width: 100%; 
+  	border-collapse: collapse;
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+}
+
+.admin_mode_buttons {
+	height:17px;
+	width:17px;
+	float:right;
+	cursor:pointer;
+	
+}
+
+.sorting_asc {
+	background:#333 url('../../images/sort_asc.png') no-repeat center right;
+}
+.sorting_desc {
+	background:#333 url('../../images/sort_desc.png') no-repeat center right;
+}
+.sorting {
+	background:#333 url('../../images/sort_both.png') no-repeat center right;
+}
+
+tr:nth-of-type(odd) { 
+  	background: #eee543; 
+}
+
+th { 
+  	background: #888; 
+  	color: white; 
+  	font-weight: bold; 
+}
+
+td {
+	word-break: break-all;
+}
+
+td, th { 
+  	padding: 10px; 
+  	border: 1px solid #222803; 
+ 	text-align: left;
+	min-width: 35px;
+	max-width: 700px;
+}
+
+.example_alt_pagination div.dataTables_info {
+    width: 40%;
+}
+ 
+.paging_full_numbers {
+   	width: 400px;
+   	height: 22px;
+   	line-height: 22px;
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+}
+ 
+.paging_full_numbers span.paginate_button,
+   .paging_full_numbers span.paginate_active {
+    	border: 1px solid #aaa;
+    	-webkit-border-radius: 5px;
+    	-moz-border-radius: 5px;
+    	padding: 2px 5px;
+    	margin: 0 3px;
+    	cursor: pointer;
+    	*cursor: hand;
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+}
+ 
+.paging_full_numbers span.paginate_button {
+    	background-color: #ddd;
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+}
+ 
+.paging_full_numbers span.paginate_button:hover {
+    	background-color: #222;
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+}
+ 
+.paging_full_numbers span.paginate_active {
+    	background-color: #99B3FF;
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+}
+
+.dataTables_info {
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+
+}
+
+.dataTables_length {
+	float:left;
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+}
+
+.dataTables_Filter {
+	float:right;
+	font-family: 'Nova Round', cursive;
+	font-size: 90%;
+}
+
+.paginate_button.current:hover {
+	padding-left:15px;
+	padding-right:15px;
+	cursor:pointer;
+	color: #234 !important;
+	border: 1px solid #cacaca;
+	background-color: white;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, gainsboro));
+	background: -webkit-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -moz-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -ms-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -o-linear-gradient(top, white 0%, gainsboro 100%);
+	background: linear-gradient(to bottom, white 0%, gainsboro 100%);
+}
+
+.paginate_button.current {
+	cursor:pointer;
+	padding-left:15px;
+	padding-right:15px;
+	color: #234 !important;
+	border: 1px solid #cacaca;
+	background-color: white;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, gainsboro));
+	background: -webkit-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -moz-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -ms-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -o-linear-gradient(top, white 0%, gainsboro 100%);
+	background: linear-gradient(to bottom, white 0%, gainsboro 100%);
+}
+
+.functional_buttons {
+	float:right;
+	width:50px;
+	height:25px;
+	cursor:pointer;
+	color: #234 !important;
+	border: 1px solid #cacaca;
+	background-color: white;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, gainsboro));
+	background: -webkit-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -moz-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -ms-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -o-linear-gradient(top, white 0%, gainsboro 100%);
+	background: linear-gradient(to bottom, white 0%, gainsboro 100%);
+}
+
+.paginate_button {
+	cursor:pointer;
+	padding-left:15px;
+	padding-right:15px;
+	color: #234 !important;
+	border: 1px solid #cacaca;
+	background-color: white;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, gainsboro));
+	background: -webkit-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -moz-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -ms-linear-gradient(top, white 0%, gainsboro 100%);
+	background: -o-linear-gradient(top, white 0%, gainsboro 100%);
+	background: linear-gradient(to bottom, white 0%, gainsboro 100%);
+	margin-bottom: 20px;
+}
+
+table.dataTable.dtr-inline.collapsed tbody td:first-child,
+table.dataTable.dtr-inline.collapsed tbody th:first-child {
+  	position: relative;
+  	padding-left: 30px;
+  	cursor: pointer;
+}
+
+table.dataTable.dtr-inline.collapsed tbody td:first-child:before,
+table.dataTable.dtr-inline.collapsed tbody th:first-child:before {
+  	top: 8px;
+  	left: 4px;
+  	height: 16px;
+  	width: 16px;
+  	display: block;
+  	position: absolute;
+  	color: white;
+  	border: 2px solid white;
+  	border-radius: 16px;
+  	text-align: center;
+  	line-height: 14px;
+  	box-shadow: 0 0 3px #444;
+  	box-sizing: content-box;
+  	content: '+';
+  	background-color: #DF8600;
+}
+
+table.dataTable.dtr-inline.collapsed tbody td:first-child.dataTables_empty:before,
+table.dataTable.dtr-inline.collapsed tbody th:first-child.dataTables_empty:before {
+  	display: none;
+}
+
+table.dataTable.dtr-inline.collapsed tbody tr.parent td:first-child:before,
+table.dataTable.dtr-inline.collapsed tbody tr.parent th:first-child:before {
+  	content: '-';
+  	background-color: #d33333;
+}
+
+table.dataTable.dtr-inline.collapsed tbody tr.child td:before {
+  	display: none;
+}
+
+table.dataTable.dtr-column tbody td.control,
+table.dataTable.dtr-column tbody th.control {
+  	position: relative;
+  	cursor: pointer;
+}
+
+table.dataTable.dtr-column tbody td.control:before,
+table.dataTable.dtr-column tbody th.control:before {
+  	top: 50%;
+  	left: 50%;
+  	height: 16px;
+  	width: 16px;
+  	margin-top: -10px;
+  	margin-left: -10px;
+  	display: block;
+  	position: absolute;
+  	color: white;
+  	border: 2px solid white;
+  	border-radius: 16px;
+  	text-align: center;
+  	line-height: 14px;
+  	box-shadow: 0 0 3px #444;
+  	box-sizing: content-box;
+  	content: '+';
+  	background-color: #31b131;
+}
+
+table.dataTable.dtr-column tbody tr.parent td.control:before,
+table.dataTable.dtr-column tbody tr.parent th.control:before {
+  	content: '-';
+  	background-color: #d33333;
+}
+
+table.dataTable tr.child {
+  	padding: 0.5em 1em;
+}
+
+table.dataTable tr.child:hover {
+  	background: transparent !important;
+}
+
+table.dataTable tr.child ul {
+  	display: inline-block;
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+}
+
+table.dataTable tr.child ul li {
+  	border-bottom: 1px solid #efefef;
+  	padding: 0.5em 0;
+  	white-space: nowrap;
+}
+
+table.dataTable tr.child ul li:first-child {
+  	padding-top: 0;
+}
+
+table.dataTable tr.child ul li:last-child {
+  	border-bottom: none;
+}
+
+table.dataTable tr.child span.dtr-title {
+  	display: inline-block;
+  	min-width: 75px;
+  	font-weight: bold;
+}
